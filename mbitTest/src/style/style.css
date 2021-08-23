@@ -143,3 +143,22 @@ a {
 .button-box.style-center {
   justify-content: center;
 }
+
+/* 로딩 스타일 */
+.loading-container {
+  display: block;
+  position: absolute;
+  top: 326px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.loading-container img {
+  width: 91px;
+  height: 88px;
+  margin-bottom: 24px;
+}
+.loading-container p {
+  font-size: 14px;
+}
