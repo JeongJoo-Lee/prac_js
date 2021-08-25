@@ -141,6 +141,7 @@ a {
   border-radius: 10px;
   color: #fff;
   font-weight: bold;
+  border: none;
 }
 .button-box.style-center {
   justify-content: center;
