@@ -34,6 +34,33 @@ const form = document.querySelector("#question-form");
         <button type="button" class="previous-btn">이전</button>
         <button type="submit" class="next-btn">제출</button>
       `;
+
+      const prevButtons = document.querySelectorAll(".previous-btn");
+      const nextButtons = document.querySelectorAll(".next-btn");
+
+      for (let prevButton of prevButtons) {
+        prevButton.addEventListener("click", () => {
+          let current = document.querySelector(".question-item.on");
+          movePrev(current);
+        });
+      }
+
+      for (let nextButton of nextButtons) {
+        nextButton.addEventListener("click", () => {
+          const inp = document.querySelectorAll(".question-item.on input");
+          let isChecked = false;
+          inp.forEach((item) => {
+            if (item.checked) {
+              let current = document.querySelector(".question-item.on");
+              moveNext(current);
+              isChecked = true;
+            }
+          });
+          if (!isChecked) {
+            alert("보기를 선택해주세요!");
+          }
+        });
+      }
     });
 })();
 
@@ -74,4 +101,20 @@ function setElement(question, answerArr) {
 
   tempContainer.remove();
   return questionItem;
+}
+
+function moveNext(currentItem) {
+  currentItem.classList.remove("on");
+  let next = currentItem.nextElementSibling;
+  if (next) {
+    next.classList.add("on");
+  }
+}
+
+function movePrev(currentItem) {
+  currentItem.classList.remove("on");
+  let prev = currentItem.previousElementSibling;
+  if (prev) {
+    prev.classList.add("on");
+  }
 }
