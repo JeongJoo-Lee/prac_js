@@ -61,6 +61,11 @@ const form = document.querySelector("#question-form");
           }
         });
       }
+
+      const statusBar = document.querySelectorAll(".status-bar");
+      statusBar.forEach((item, idx) => {
+        item.style.width = `${(Number(idx) + 1) * 10}%`;
+      });
     });
 })();
 
