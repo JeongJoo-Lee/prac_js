@@ -19,10 +19,10 @@ app.get("/result/[1-5]", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  const data = req.data;
+  const data = req.body;
   let numberArr = [0, 0, 0, 0, 0];
 
-  for (let i = 0; i < 11; i++) {
+  for (let i = 1; i < 11; i++) {
     let developerNum = Number(data[`question-${i}`]);
     numberArr[developerNum - 1] += 1;
   }

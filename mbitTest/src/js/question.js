@@ -82,7 +82,9 @@ function setElement(question, answerArr) {
       <input type="radio" id="answer-${answer.pk}" name="question-${
       question.pk
     }" value=${answer.developer}>
-      <label for="answer-1">${Number(idx) + 1}. ${answer.content}</label>
+      <label for="answer-${answer.pk}">${Number(idx) + 1}. ${
+      answer.content
+    }</label>
     </li>
     `;
   }
